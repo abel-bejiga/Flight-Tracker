@@ -84,7 +84,7 @@ body {
 
 main {
     background-color: rgba(255, 255, 255, 0.5);
-    height: 30vh;
+    height: fit-content;
     min-height: 500px;
     max-height: 700px;
     width: 70%;
@@ -101,9 +101,7 @@ main {
     box-shadow: 1px 1px 20px var(--text-accent);
     backdrop-filter: blur(4px);
     -webkit-backdrop-filter: blur(4px);
-}
-main {
-    overflow: auto;
+    padding: 15px;
 }
 
 

@@ -1,6 +1,6 @@
 import React from 'react'
 import $ from 'jquery'
-import {chosenStateHandler} from './prac.js'
+import {chosenStateHandler, resetClicked} from './prac.js'
 
 
 
@@ -20,8 +20,9 @@ export const Flight = () => {
        <main className="main">
                 <div className="userInputHolder">
                 <label className='text-center text-gray-800' htmlFor="input">Enter Flight Number</label>
-                <input type="text" className='border-2 rounded border-y-black w-28 h-9 p-3 text-xl m-auto text-center' id='userInput' required autoComplete='off' placeholder='Type Here'/>
+                <input type="text" className='border-2 rounded w-28 h-9 p-3 text-xl m-auto text-center' id='userInput' required autoComplete='off' placeholder='Type Here'/>
                 <button type='submit' className='searchBtn w-24 m-auto h-8 rounded border-2 active:bg-green-600 active:text-white' id='searchBtn' onClick={chosenStateHandler}>Search</button>
+                <button type="submit" className='searchBtn w-24 m-auto h-8 rounded border-2 active:bg-red-600 active:text-white hidden' id='resetBtn' onClick={resetClicked}>Reset</button>
                 </div>
        </main>
 
