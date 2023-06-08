@@ -1,0 +1,127 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+*{
+    margin: 0;
+}
+::placeholder {
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin: auto;
+    
+}
+:root {
+    --prim-btn: #285236;
+    --sec-btn: #faf6f5;
+    --prim-bg: #f5eeea;
+    --text: #070503;
+    --text-accent: #09070e;
+    --font: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+body {
+    height: 100vh;
+    color: var(--text);
+    font-family: var(--font);
+    overflow: hidden;
+}
+.homePage, .flightPage {
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+}
+.heroHome {
+    background: url(./Assets/img/Hero-home-img.jpg) no-repeat top / cover;
+    
+}
+.heroFlight {
+    background: url(./Assets/img/hero-img.jpg) no-repeat top / cover;
+
+}
+.navBar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding: 10px;
+    position: absolute;
+    width: 100%;
+    z-index: 2;
+
+}
+.navBar img {
+    width: 50px;
+    display: grid;
+
+}
+.navBar a {
+    text-decoration: none;
+    font-size: 25px;
+    transition: all 0.5s;
+    color: var(--text-accent);
+}
+.navBar a:hover {
+    background-color: #070503;
+    color: #fff;
+    border-radius: 5px;
+    padding: 3px 10px;
+}
+.flyLeft {
+    animation: flyLeft 3s ease-in-out forwards 1;
+}
+
+@keyframes flyLeft {
+    from {transform: translate(-250px, -100px) rotate(100deg);}
+    to {transform: translate(0px) rotate(0);}
+}
+
+
+/* home */
+
+main {
+    background-color: rgba(255, 255, 255, 0.5);
+    height: 30vh;
+    min-height: 500px;
+    max-height: 700px;
+    width: 70%;
+    max-width: 1200px;
+    min-width: 500px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: grid;
+    place-content: center;
+    gap: 10px;
+    border-radius: 20px;
+    box-shadow: 1px 1px 20px var(--text-accent);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+}
+main {
+    overflow: auto;
+}
+
+
+main label {
+    padding-right: 20px;
+    font-size: 20px;
+    color: var(--text-accent);
+}
+
+.searchBtn:hover {
+    cursor: pointer;
+    border: 1px solid #000;
+}
+.userInputHolder {
+    display: grid;
+    gap: 7px;
+}
+.searchRes {
+    height: fit-content;
+    overflow: auto;
+}
