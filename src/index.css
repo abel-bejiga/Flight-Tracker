@@ -94,8 +94,6 @@ main {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    display: grid;
-    place-content: center;
     gap: 10px;
     border-radius: 20px;
     box-shadow: 1px 1px 20px var(--text-accent);
@@ -119,7 +117,26 @@ main label {
     display: grid;
     gap: 7px;
 }
+
 .searchRes {
     height: fit-content;
     overflow: auto;
+    margin: auto;
+    flex-basis: 50%;
+    gap: 20px;
+}
+.countryFlag{
+    
+    /* left: 50%; */
+    /* top: 50%; */
+}
+.searchRes:nth-child(1) img{
+    border-radius: 50%;
+    background-color: white;
+    width: fit-content;
+    width: -moz-fit-content;
+    position: absolute;
+    left: 50%;
+    top: 30%;
+    transform: translate(-50%);
 }
