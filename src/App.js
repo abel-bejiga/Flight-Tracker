@@ -12,7 +12,7 @@ function App() {
 <nav className='navBar'>
   <img src={HeroLogo} alt="aircraft img" className='flyLeft'/>
   <Link to='/'>Home</Link>
-  <Link to='/flight'>Flights</Link>
+  <Link to='/flight'>Check Flights</Link>
 
 </nav>
 
