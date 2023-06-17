@@ -1,6 +1,6 @@
 import key from './keys'
 import $ from 'jquery'
-import { handleInputChange, Flight } from './Flight.js'
+import { handleInputChange, Flight } from './components/Flight'
 
 export function chosenStateHandler(event) {
     let URL = `https://airlabs.co/api/v9/flight?flight_icao=${handleInputChange()}&api_key=${key}`;
@@ -27,7 +27,7 @@ export function chosenStateHandler(event) {
 
             elArray.forEach(arr => {
                 
-                arr.attr('class', 'searchRes w-4/12 grid gap-2 justify-center')
+                arr.attr('class', 'searchRes w-full grid gap-2 justify-center')
             })
 
 
@@ -38,7 +38,7 @@ export function chosenStateHandler(event) {
                     if (j[k] === i) {
                         if (i === airlineName){
                             let resultHolder1 = $('<p></p>');
-                            resultHolder1.attr('class', 'res text-sky-100');
+                            resultHolder1.attr('class', 'res text-xl max-sm:text-base text-sky-100 lg:font-semibold lg:absolute lg:left-1/4 lg:top-[44%] lg:-translate-x-1/2 lg:-translate-y-1/2 tracking-wide');
                             resultHolder1.text(`${data.response[i]} (${chosenEvent})`);
                             newEl1.append(resultHolder1);
                         }
@@ -212,7 +212,7 @@ export function chosenStateHandler(event) {
         if (chosenEvent !== ''){
   
             let pHolder = $('<section></section>');
-            pHolder.attr('class', 'pHolder flex flex-wrap justify-center text-left mt-3 bg-gray-800 border-transparent p-5 ');
+            pHolder.attr('class', 'pHolder max-md:grid lg:flex lg:flex-wrap lg:justify-center text-left mt-3 bg-gray-800 border-transparent p-3 ');
             pHolder.append(newEl1, newEl4, newEl2, newEl3, errorCode);
             $('.main').append(pHolder);
             $('#resetBtn').removeClass('hidden')

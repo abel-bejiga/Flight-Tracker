@@ -31,19 +31,21 @@ body {
     font-family: var(--font);
     overflow: hidden;
 }
+.heroHome {
+    background: url(./Assets/img/loos_Hero-home-img.webp) no-repeat top / cover;
+    
+}
+.heroFlight {
+    background: url(./Assets/img/loosy_hero-img.jpg) no-repeat top / cover;
+
+}
 .homePage, .flightPage {
+    background-position: center;
+    background-size: cover;
     width: 100%;
     height: 100vh;
     position: absolute;
     top: 0;
-}
-.heroHome {
-    background: url(./Assets/img/Hero-home-img.jpg) no-repeat top / cover;
-    
-}
-.heroFlight {
-    background: url(./Assets/img/hero-img.jpg) no-repeat top / cover;
-
 }
 .navBar {
     display: flex;
@@ -68,9 +70,9 @@ body {
     color: var(--text-accent);
 }
 .navBar a:hover {
-    background-color: #070503;
-    color: #fff;
+    background-color: #ffffffc7;
     border-radius: 5px;
+    
     padding: 3px 10px;
 }
 .flyLeft {
@@ -80,32 +82,55 @@ body {
 @keyframes flyLeft {
     from {transform: translate(-250px, -100px) rotate(100deg);}
     to {transform: translate(0px) rotate(0);}
+    
+}
+
+
+@keyframes slideDown {
+    from {top: 80%; opacity: 0;}
+    to {top: 105%; opacity: 1;}
+}
+
+@keyframes slideUp{
+    from {top: 105%; opacity: 1;}
+    to {top: 80%; opacity: 0;}
+}
+.slideDown {
+    animation: slideDown 0.5s ease-in forwards 1;
+}
+.slideUp {
+    animation: slideUp 0.3s ease-out backwards 1;
 }
 
 
 /* home */
 
 main {
-    background-color: rgba(255, 255, 255, 0.5);
+    background-color: rgba(255, 255, 255, 0.877);
+    background-color: #fff;
     height: fit-content;
-    min-height: 500px;
     max-height: 700px;
     width: 70%;
     max-width: 1200px;
-    min-width: 500px;
+    min-width: 230px;
     position: absolute;
+    z-index: 99;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     gap: 10px;
     border-radius: 20px;
     box-shadow: 1px 1px 20px var(--text-accent);
-    backdrop-filter: blur(2px);
-    -webkit-backdrop-filter: blur(2px);
     padding: 15px;
-    /* overflow: scroll; */
+  
 }
+@media screen and (max-height: 655px) {
+    main {
+        max-height: 400px;
+        overflow: auto;
+    }
 
+}
 
 main label {
     padding-right: 20px;
@@ -129,32 +154,54 @@ main label {
     flex-basis: 50%;
     gap: 20px;
 }
-.countryFlag{
-    
-    /* left: 50%; */
-    /* top: 50%; */
-}
+
 .searchRes:nth-child(1) img{
 
     width: fit-content;
     width: -moz-fit-content;
     position: absolute;
-    left: 50%;
-    top: 50%;
+    left: 25%;
+    top: 56%;
     transform: translate(-50%, -50%);
     height: 100px;
-
  
 }
-
+.searchRes:nth-child(1) p {
+    padding-bottom: 10px;
+}
 .searchRes:nth-child(2){
     height: 100%;
     overflow: auto;
-    border: 1px solid lightseagreen;
+    /* border: 1px solid lightseagreen; */
     border-radius: 20px;
-    background: rgb(8, 55, 87);
-    box-shadow: 1px 1px 10px white;
-    padding: 15px 0;
+    background-color: rgb(8, 55, 87);
+    /* box-shadow: 1px 1px 5px rgba(255, 255, 255, 0.466); */
+    padding: 15px 10px;
+}
+@media screen and (max-width: 1500px) {
+    .searchRes:nth-child(2){
+        position: relative;
+        background-color: rgba(8, 55, 87, 0.842);
+    }
+
+  
+}
+@media screen and (max-width: 1024px) {
+    .searchRes:nth-child(1) img {
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+    }
+}
+
+@media screen and (max-width: 640px) {
+    main {
+        border-radius: 0;
+        
+    }
+}
+.searchRes p:last-child {
+    padding-bottom: 10px;
 }
 .pHolder {
     position: relative;
@@ -167,11 +214,11 @@ main label {
 
 /* media query */
 
-@media screen and (max-width: 1229px){
+/* @media screen and (max-width: 1229px){
     .pHolder {
         display: grid !important;
     }
-}
+} */
 
 .valHolder{
     width: 300px;
@@ -184,4 +231,34 @@ main label {
     right: 0%;
     top: 0%;
     font-size: 14px;
+}
+
+@keyframes gradualAnimeIn {
+    from{opacity: 0;}
+    to{opacity: 1;}
+}
+.gradualAnimeIn {
+    animation: gradualAnimeIn 0.5s ease-in forwards 1;
+}
+
+@keyframes gradualAnimeOut {
+    from{opacity: 1;}
+    to{opacity: 0;}
+}
+.gradualAnimeOut {
+    animation: gradualAnimeOut 2.5s ease-out backwards 1;
+}
+
+.gif {
+    display: none;
+}
+.buyCoffee {
+    transition: 0.5s;
+}
+.buyCoffee:hover .gif {
+    display: flex;
+    
+}
+.buyCoffee:hover body {
+    filter: blur(4px);
 }

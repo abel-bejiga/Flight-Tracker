@@ -1,28 +1,20 @@
-import './Assets/style/App.css'
-import {Flight} from './Flight.js'
-import Home from './Home'
-import HeroLogo from './Assets/icon/hero-logo.png'
-import { Route, Routes, Link} from 'react-router-dom'
-import {flightData} from './prac.js'
+import {Flight} from './components/Flight'
+import { Route, Routes} from 'react-router-dom'
+import Home from './components/Home'
+import NavBar from './components/NavBar'
+import About from './components/About'
 
 
 function App() {
   return (
 <>
-<nav className='navBar'>
-  <img src={HeroLogo} alt="aircraft img" className='flyLeft'/>
-  <Link to='/'>Home</Link>
-  <Link to='/flight'>Check Flights</Link>
+  <NavBar />
+  <Routes>
+    <Route path='/' element={<Home/>}/>
+    <Route path='/flight'  element={<Flight />} />
+    <Route path='/about'  element={<About />} />
 
-</nav>
-
-
-<Routes>
-  <Route path='/' element={<Home/>}/>
-  <Route path='/flight'  element={<Flight />} />
-
-</Routes>
-
+  </Routes>
 
 </>
   );
