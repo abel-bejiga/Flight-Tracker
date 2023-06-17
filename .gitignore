@@ -11,7 +11,7 @@ keys.js
 
 # production
 /build
-/Assets
+Assets/
 # misc
 .DS_Store
 .env.local
