@@ -30,6 +30,10 @@ body {
     color: var(--text);
     font-family: var(--font);
     overflow: hidden;
+    -webkit-user-select: none; /* Safari */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* IE 10+ */
+    user-select: none; /* Standard syntax */
 }
 .heroHome {
     background: url(./Assets/img/loos_Hero-home-img.webp) no-repeat top / cover;
@@ -65,7 +69,7 @@ body {
 }
 .navBar a {
     text-decoration: none;
-    font-size: 25px;
+    font-size: 20px;
     transition: all 0.5s;
     color: var(--text-accent);
 }
@@ -259,6 +263,91 @@ main label {
     display: flex;
     
 }
-.buyCoffee:hover body {
-    filter: blur(4px);
-}
+
+@keyframes shake {
+    0% { transform: translate(1px, 1px) rotate(0deg); }
+    10% { transform: translate(-1px, -2px) rotate(-1deg); }
+    20% { transform: translate(-3px, 0px) rotate(1deg); }
+    30% { transform: translate(3px, 2px) rotate(0deg); }
+    40% { transform: translate(1px, -1px) rotate(1deg); }
+    50% { transform: translate(-1px, 2px) rotate(-1deg); }
+    60% { transform: translate(-3px, 1px) rotate(0deg); }
+    70% { transform: translate(3px, 1px) rotate(-1deg); }
+    80% { transform: translate(-1px, -1px) rotate(1deg); }
+    90% { transform: translate(1px, 2px) rotate(0deg); }
+    100% { transform: translate(1px, -2px) rotate(-1deg); }
+  }
+
+  .shake {
+    animation: shake 0.5s ease 1;
+  }
+  .backgroundWeatherStat {
+    position: absolute;
+    z-index: -20;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 12px;
+    animation: slightReviel 1s ease forwards 1;
+  }
+
+  @keyframes slightReviel {
+    from {opacity: -1;}
+    to {opacity: 1;}
+  }
+
+  /* loader */
+
+  .loadContainer {
+    position: relative;
+
+  }
+  .loader {
+    max-width: 5rem;
+    width: 100%;
+    height: auto;
+    stroke-linecap: round;
+  }
+  circle {
+    fill: none;
+    stroke-width: 3.5;
+    animation-name: preloader;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+    transform-origin: 170px 170px;
+    will-change: transform;
+  }
+  circle:nth-of-type(1) {
+    stroke-dasharray: 550px;
+  }
+  circle:nth-of-type(2) {
+    stroke-dasharray: 500px;
+  }
+  circle:nth-of-type(3) {
+    stroke-dasharray: 450px;
+  }
+  circle:nth-of-type(4) {
+    stroke-dasharray: 300px;
+  }
+  circle:nth-of-type(1) {
+    animation-delay: -0.15s;
+  }
+  circle:nth-of-type(2) {
+    animation-delay: -0.3s;
+  }
+  circle:nth-of-type(3) {
+    animation-delay: -0.45s;
+  }
+  circle:nth-of-type(4) {
+    animation-delay: -0.6s;
+  }
+  @keyframes preloader {
+    50% {
+      transform: rotate(360deg);
+    }
+  }
+  

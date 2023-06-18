@@ -5,7 +5,10 @@
 /.pnp
 .pnp.js
 prac.js
+features.js
 keys.js
+package-lock.json
+package.json
 # testing
 /coverage
 
